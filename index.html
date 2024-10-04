@@ -307,15 +307,21 @@
                     <h1 class="title has-text-centered section-title" data-aos="fade-up" data-aos-easing="linear">Ucapan</h1>
                 </div>
                 <!-- Displaying Data -->
-      <div class="column is-12 has-text-centered" id="wish-container" data-aos="fade-up" data-aos-easing="linear">
-        <div data-sheetdb-url="https://sheetdb.io/api/v1/qm2xsbjygn8so" id="sheetdb-data" style="margin: 0 auto;">
-          <!-- This will dynamically show data -->
-        </div>
-        <button class="button is-primary mt-5" onclick="fetchWishes()">Refresh Ucapan</button>
-      </div>
-              
+                
+                <div class="column is-12 has-text-centered" id="wish-container" data-aos="fade-up" data-aos-easing="linear">
+                  
+                  <div class="box" style="border: 2px solid #ccc; padding: 20px; border-radius: 10px; background-color: #f9f9f9; display: inline-block; width: 900px; height: 400px; overflow-y: auto; margin: 0 auto;">
+                    <button class="button is-primary mt-5" onclick="fetchWishes()" style="margin-top: 20px; background-color: green;"  >Refresh</button>
+                    <div id="sheetdb-data" style="margin: 0 auto;">
+                      <!-- Wishes will be loaded here on page load -->
+                    </div>
+                    
+                  </div>
+                </div>
+             
                 
                     <div class="column is-12 prolog has-text-centered" data-aos="fade-up" data-aos-easing="linear">
+                      <div class="box" style="border: 2px solid #ccc; padding: 20px; border-radius: 10px; background-color: #f9f9f9; display: inline-block; width: 400px; height: 200px; overflow-y: auto; margin: 0 auto;">
                         <h2>Tinggalkan Ucapan</h2>
                         <form id="wishForm" onsubmit="submitForm(event)">
                             <label for="name">Nama:</label>
@@ -324,6 +330,7 @@
                             <input type="text" id="wish" required><br><br>
                             <input type="submit" value="Hantar">
                         </form>
+                      </div>
                     </div>
                 
 
@@ -390,26 +397,48 @@
       });
     </script>
     <script>
-    function fetchWishes() {
-      fetch('https://sheetdb.io/api/v1/qm2xsbjygn8so')
-        .then(response => response.json())
-        .then(data => {
-          const container = document.getElementById('sheetdb-data');
-          container.innerHTML = ''; // Clear previous data
-          data.forEach(item => {
-            const name = document.createElement('h1');
-            name.textContent = item.name;
-            const wish = document.createElement('p');
-            wish.textContent = item.wish;
-  
-            container.appendChild(name);
-            container.appendChild(wish);
-          });
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-        });
-    }</script>
+    // Function to fetch and display wishes
+// Function to fetch and display wishes
+function fetchWishes() {
+  fetch('https://sheetdb.io/api/v1/qm2xsbjygn8so')
+    .then(response => response.json())
+    .then(data => {
+      const wishContainer = document.getElementById('sheetdb-data');
+      wishContainer.innerHTML = ''; // Clear previous data
+
+      // Sort by most recent timestamp first (descending)
+      data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+      // Limit the display to 6 most recent wishes
+      const recentWishes = data.slice(0, 100);
+      
+
+      // Loop through the limited data and display each wish
+      recentWishes.forEach(item => {
+        const wishItem = `
+          <div style="border-bottom: 1px solid #ddd; padding: 10px;">
+            <h3><strong>${item.name}</strong></h3>
+            <p>${item.wish}</p>
+            
+          </div>
+        `;
+        wishContainer.innerHTML += wishItem;
+      });
+      
+      // If there are more than 6 wishes, show the rest in a scrollable container
+      if (data.length > 6) {
+        wishContainer.style.overflowY = 'auto';
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching wishes:', error);
+    });
+}
+
+// Call the function once the page loads to display the wishes immediately
+document.addEventListener('DOMContentLoaded', fetchWishes);
+
+</script>
     
   </body>
 </html>
