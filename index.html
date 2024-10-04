@@ -299,44 +299,48 @@
       <!-- End Lokasi Content -->
 
 
-      <!-- Begin RSVP Content -->
+      <!-- Begin Wish Content -->
       <section class="section-dark contact" id="rsvp">
         <div class="container">
-          <div class="columns is-multiline">          
-            <div class="column is-12 prolog">
-              <h1 class="title has-text-centered section-title" data-aos="fade-up" data-aos-easing="linear">Konfirmasi Kehadiran</h1>
-            </div>
-            <section class="wish-section">
-              <div class="container">
-                  <h2>Tinggalkan Ucapan</h2>
-                  <form id="wish-form">
-                      <label for="name">Nama:</label>
-                      <input type="text" id="name" name="name" required>
-                      
-                      <label for="wish">Ucapan:</label>
-                      <textarea id="wish" name="wish" required></textarea>
-                      
-                      <button type="submit">Hantar</button>
-                  </form>
-              </div>
-          </section>
-              <div class="space40px"></div>
-
-              <div class="space40px"></div>
-              <div data-aos="fade-up" data-aos-easing="linear">
-                <img src="image/divider-leaves.png" class="divider has-text-centered" alt="~~~">
-              </div>
-              <div class="space40px"></div>
-
-                </a>
-              </p>
-
-            </div>
- 
-         </div>
+            <div class="columns is-multiline">          
+                <div class="column is-12 prolog">
+                    <h1 class="title has-text-centered section-title" data-aos="fade-up" data-aos-easing="linear">Ucapan</h1>
+                </div>
+                <!-- Displaying Data -->
+      <div class="column is-12 has-text-centered" id="wish-container" data-aos="fade-up" data-aos-easing="linear">
+        <div data-sheetdb-url="https://sheetdb.io/api/v1/qm2xsbjygn8so" id="sheetdb-data" style="margin: 0 auto;">
+          <!-- This will dynamically show data -->
         </div>
-      </section>
-      <!-- End RSVP Content -->
+        <button class="button is-primary mt-5" onclick="fetchWishes()">Refresh Ucapan</button>
+      </div>
+              
+                
+                    <div class="column is-12 prolog has-text-centered" data-aos="fade-up" data-aos-easing="linear">
+                        <h2>Tinggalkan Ucapan</h2>
+                        <form id="wishForm" onsubmit="submitForm(event)">
+                            <label for="name">Nama:</label>
+                            <input type="text" id="name" required><br><br>
+                            <label for="wish">Ucapan:</label>
+                            <input type="text" id="wish" required><br><br>
+                            <input type="submit" value="Hantar">
+                        </form>
+                    </div>
+                
+
+                <div class="space40px"></div>
+    
+                <div data-aos="fade-up" data-aos-easing="linear">
+                    <img src="image/divider-leaves.png" class="divider has-text-centered" alt="~~~">
+                </div>
+    
+                <div class="space40px"></div>
+    
+            </div>
+        </div>
+    </section>
+    <!-- End Wish Content -->
+    
+      <!-- End Wish Content -->
     </div>
     <!-- End Main Content -->
 
@@ -348,28 +352,35 @@
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
  
- <script>
-      document.getElementById('wish-form').addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent the form from submitting the default way
-  
-          const formData = new FormData(this);
-          const xhr = new XMLHttpRequest();
-          xhr.open('POST', 'https://script.google.com/macros/s/AKfycbyy3lytZCfi-PUF6GM3ospJV69HnIUBZFv8hWW0gAT9GlmMz9N7oBkZJ2WLPbfPAeXcqA/exec'); // Replace with your Apps Script URL
-          xhr.setRequestHeader('Accept', 'application/json');
-  
-          xhr.onload = function() {
-              if (xhr.status === 200) {
-                  alert('Wish submitted successfully!');
-                  document.getElementById('wish-form').reset(); // Reset the form
-              } else {
-                  alert('Error submitting wish: ' + xhr.responseText);
-              }
-          };
-  
-          xhr.send(formData);
-          console.log('Form submitted'); // Add this line
+    <script>
+      async function submitForm(event) {
+          event.preventDefault(); // Prevent the default form submission
 
-      });
+          const name = document.getElementById('name').value;
+          const wish = document.getElementById('wish').value;
+           // Create a timestamp
+           const timestamp = new Date().toISOString()
+
+          // Sending data to SheetDB
+          try {
+              const response = await fetch('https://sheetdb.io/api/v1/qm2xsbjygn8so', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ data: [{ name: name, wish: wish, timestamp: timestamp  }] }), // Wrap the data in an object
+              });
+
+              const result = await response.json();
+              console.log(result); // Log the result to see if it worked
+
+              // You can also provide feedback to the user
+              alert('Wish submitted successfully!');
+          } catch (error) {
+              console.error('Error:', error);
+              alert('There was an error submitting your wish.');
+          }
+      }
   </script>
 
     <script>
@@ -378,6 +389,28 @@
         duration: 800,
       });
     </script>
+    <script>
+    function fetchWishes() {
+      fetch('https://sheetdb.io/api/v1/qm2xsbjygn8so')
+        .then(response => response.json())
+        .then(data => {
+          const container = document.getElementById('sheetdb-data');
+          container.innerHTML = ''; // Clear previous data
+          data.forEach(item => {
+            const name = document.createElement('h1');
+            name.textContent = item.name;
+            const wish = document.createElement('p');
+            wish.textContent = item.wish;
+  
+            container.appendChild(name);
+            container.appendChild(wish);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    }</script>
+    
   </body>
 </html>
 
