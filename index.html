@@ -5,7 +5,7 @@
     <meta name="theme-color" content="#BC8887" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Undangan Pernikahan Sherly & Daeng</title>
+    <title>Jemputan Walimatul Urus Huzairi dan Irene</title>
 
 
     <meta name="twitter:card" content="summary_large_image">
@@ -64,7 +64,7 @@
             <div class="navbar-end">
               <div class="navbar-item">
                 <a class="navbar-item" href="#Waktu">
-                  Waktu
+                  Tarikh
                 </a>
               </div>
               <div class="navbar-item">
@@ -143,7 +143,7 @@
                     <a href="#home">Home</a>
                   </li>
                   <li>
-                    <a href="#Waktu">Waktu</a>
+                    <a href="#Waktu">Tarikh</a>
                   </li>
                   <li>
                     <a href="#lokasi">Lokasi</a>
@@ -151,7 +151,7 @@
                   
 
                   <li>
-                    <a href="#rsvp">RSVP</a>
+                    <a href="#rsvp">Ucapan</a>
                   </li>
                 </ul>
               </div>
@@ -306,38 +306,20 @@
             <div class="column is-12 prolog">
               <h1 class="title has-text-centered section-title" data-aos="fade-up" data-aos-easing="linear">Konfirmasi Kehadiran</h1>
             </div>
-            <div class="column is-12 prolog has-text-centered" data-aos="fade-up" data-aos-easing="linear">
-              <p class="h2 subtitle">
-                Merupakan suatu kehormatan dan kebahagiaan bagi kami
-                <br>
-                apabila Bapak/Ibu/Saudara/Saudari berkenan hadir
-                memberikan doa restu.
-                <br>
-                <br>
-                Jika bisa hadir kami tunggu konfirmasinya, 
-                <br>
-                Informasi: Di meja penerima tamu akan kami sediakan hand sanitizer dan pemeriksaan suhu tubuh.
-                <br>
-                <br>
-                Jika tidak memungkinkan untuk hadir di pernikahan kami,tidak mengapa,
-                <br> 
-                semoga bisa berjumpa di lain kesempatan
-                <br>
-                <br>
-                Stay safe & jaga kesehatan ya :)
-                </p>
-     
-              <a href="https://api.whatsapp.com/send?phone=628xxxxxxxxxx&text=Halo%20Sherly,%20saya%20akan%20datang%20di%20acara%20pernikahan&source=&data=" class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
-                <i class="fab fa-whatsapp"></i>
-                &nbsp;&nbsp;Kabari Sherly
-              </a>
-              
-
-          
-              <a href="https://api.whatsapp.com/send?phone=628xxxxxxxxxx&text=Halo%20Daeng,%20saya%20akan%20datang%20di%20acara%20pernikahan&source=&data=" class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
-                <i class="fab fa-whatsapp"></i>
-                &nbsp;&nbsp; Kabari Daeng
-              </a >
+            <section class="wish-section">
+              <div class="container">
+                  <h2>Tinggalkan Ucapan</h2>
+                  <form id="wish-form">
+                      <label for="name">Nama:</label>
+                      <input type="text" id="name" name="name" required>
+                      
+                      <label for="wish">Ucapan:</label>
+                      <textarea id="wish" name="wish" required></textarea>
+                      
+                      <button type="submit">Hantar</button>
+                  </form>
+              </div>
+          </section>
               <div class="space40px"></div>
 
               <div class="space40px"></div>
@@ -365,6 +347,31 @@
     <script src="js/menikah.js"></script>
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+ 
+ <script>
+      document.getElementById('wish-form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting the default way
+  
+          const formData = new FormData(this);
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', 'https://script.google.com/macros/s/AKfycbyy3lytZCfi-PUF6GM3ospJV69HnIUBZFv8hWW0gAT9GlmMz9N7oBkZJ2WLPbfPAeXcqA/exec'); // Replace with your Apps Script URL
+          xhr.setRequestHeader('Accept', 'application/json');
+  
+          xhr.onload = function() {
+              if (xhr.status === 200) {
+                  alert('Wish submitted successfully!');
+                  document.getElementById('wish-form').reset(); // Reset the form
+              } else {
+                  alert('Error submitting wish: ' + xhr.responseText);
+              }
+          };
+  
+          xhr.send(formData);
+          console.log('Form submitted'); // Add this line
+
+      });
+  </script>
+
     <script>
       AOS.init({
         easing: "ease-out",
@@ -373,3 +380,5 @@
     </script>
   </body>
 </html>
+
+
