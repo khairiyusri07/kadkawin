@@ -79,9 +79,11 @@ async function submitForm(event) {
 
       // You can also provide feedback to the user
       alert('Wish submitted successfully!');
+      closePopup();
   } catch (error) {
       console.error('Error:', error);
       alert('There was an error submitting your wish.');
+      closePopup();
   }
 }
 
@@ -96,7 +98,7 @@ function fetchWishes() {
       data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
       // Limit the display to 6 most recent wishes
-      const recentWishes = data.slice(0, 100);
+      const recentWishes = data.slice(0, 300);
       
 
       // Loop through the limited data and display each wish
@@ -121,6 +123,19 @@ function fetchWishes() {
       console.error('Error fetching wishes:', error);
     });
 }
+window.onload = fetchWishes;
+
+function openPopup(){
+  let popup = document.getElementById("popup"); // Get the element inside the function
+  popup.classList.add("open-popup");
+}
+
+function closePopup(){
+  let popup = document.getElementById("popup"); // Get the element inside the function
+  popup.classList.remove("open-popup");
+}
+
+
 
 // Call the function once the page loads to display the wishes immediately
 document.addEventListener('DOMContentLoaded', fetchWishes);

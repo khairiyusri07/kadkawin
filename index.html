@@ -206,9 +206,13 @@
         <span class="space40px"></span>
         <div data-aos="fade-up" data-aos-easing="linear">
           <img src="image/divider-leaves.png" class="divider has-text-centered" alt="~~~">
+          
         </div>
-        <span class="space40px"></span>
-        <span class="space40px"></span>
+        
+        <div  data-aos-easing="linear">
+          <img src="image\flowers-and-leaves.png" class="divider has-text-centered" alt="~~~">
+        </div>
+        
       </section>
       <!-- End regular-section-->    
       
@@ -253,7 +257,7 @@
         </div>
         <div class="space40px"></div>
         <div class="main-content has-text-centered" data-aos="fade-up" data-aos-easing="linear">
-          <a href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MWViNXNvdnA3bG90M3M2cHFla2Rua3JpaWQga2hhaXJpa2VyamFAbQ&tmsrc=khairikerja%40gmail.com" target="_blank" class="button has-tooltip btn-cta" data-tooltip="Add to Calendar" target="_blank" data-aos="zoom-in">
+          <a href="https://calendar.app.google/VoNAsmLnSg9EwreZA" target="_blank" class="button has-tooltip btn-cta" data-tooltip="Add to Calendar" target="_blank" data-aos="zoom-in">
             <i class="far fa-calendar-plus"></i>
             &nbsp;&nbsp;Google Calendar
           </a>
@@ -309,46 +313,64 @@
                 <div class="column is-12 has-text-centered" id="wish-container" data-aos="fade-up" data-aos-easing="linear">
                   
                   <div class="box" style="border: 2px solid #ccc; padding: 20px; border-radius: 10px; background-color: #f9f9f9; display: inline-block; width: 80%; height: 400px; overflow-y: auto; margin: 0 auto;">
-                    <button class="button is-primary mt-5" onclick="fetchWishes()" style="margin-top: 20px; background-color: green;"  >Refresh</button>
+                    <button class="button is-primary mt-5" onclick="fetchWishes()" style="margin-top: 10px; background-color: #004d24;" >Semak ucapan baru</button>
                     <div id="sheetdb-data" style="margin: 0 auto;">
                       <!-- Wishes will be loaded here on page load -->
                     </div>
                     
                   </div>
                 </div>
-             
-                
-                    <div class="column is-12 prolog has-text-centered" data-aos="fade-up" data-aos-easing="linear">
-                      <div class="box" style="border: 2px solid #ccc; padding: 20px; border-radius: 10px; background-color: #f9f9f9; display: inline-block; width: 400px; height: 200px; overflow-y: auto; margin: 0 auto;">
-                        <h2>Tinggalkan Ucapan</h2>
-                        <form id="wishForm" onsubmit="submitForm(event)">
-                            <label for="name">Nama:</label>
-                            <input type="text" id="name" required><br><br>
-                            <label for="wish">Ucapan:</label>
-                            <input type="text" id="wish" required><br><br>
-                            <input type="submit" value="Hantar">
-                        </form>
-                      </div>
-                    </div>
+                <div class="space24px"></div>
                 
 
-                <div class="space40px"></div>
-    
-                <div data-aos="fade-up" data-aos-easing="linear">
-                    <img src="image/divider-leaves.png" class="divider has-text-centered" alt="~~~">
+                  <div class="column is-12 prolog has-text-centered">
+
+                    <button type="submit" class="button is-primary mt-5" style="height: fit-content; width: auto;; margin-top: 10px; background-color: #f8f8f8; color: black;   font-size: 22px;
+                    font-weight: 500;" onclick="openPopup()" >Hantar Ucapan</button>
+                      <div class="popup" id="popup" >
+
+                        <img src="image\pngwing.com (1).png"><img>
+                          <h2>Tulis Ucapan</h2>
+                          <form id="wishForm" onsubmit="submitForm(event)">
+                              <label for="name" style="font-size: 25px ; font-weight: 500; margin: 30px 0 10px; color: black;">Nama:</label>
+                              <div class="space1px"></div>
+                              <input type="text" id="name" required style="width: 300px; "><br><br>
+                              <label for="wish" style="font-size: 25px ; font-weight: 500; margin: 30px 0 10px; color: black;">Ucapan:</label>
+                              <div class="space1px"></div>
+                              <input id="wish" required style="width: 300px; height: 300px;"><br><br>
+                              <input type="submit" value="Hantar" style=" width: 100%;  margin-top: 50px; padding: 10px 0; background: #004d24; color: azure; border: 0; outline: none; font-size: 18px; border-radius: 4px; cursor: pointer;"><br>
+                            <button type="reset" onclick="closePopup()" style=" width: 50%; margin-top: 10px; ; padding: 10px 0; background: white; color: black; outline: none; font-size: 18px; border-radius: 4px; cursor: pointer;">Tutup</button>
+                          </form>
+                      </div>
+                   </div>
+                   
                 </div>
-    
-                <div class="space40px"></div>
-    
-            </div>
+                
+
+
         </div>
+        <div class="space40px"></div>
+        
+        <div class="space40px"></div>
+
     </section>
     <!-- End Wish Content -->
+    <section>
+      <div>
+        <div class="space40px"></div>
+        <div class="space40px">
+          
     
+          <div  data-aos="fade-up" data-aos-easing="linear"  >
+              <img src="image/divider-leaves.png" class="divider has-text-centered" style="position: relative; bottom: 0%; left: 50%; right: 50%; transform: translate(-50%,-50%)  ">
+          </div></div>
+
+          <div class="space40px"></div>
+      </div>
+    </section>
       <!-- End Wish Content -->
     </div>
     <!-- End Main Content -->
-
 
 
     <!-- Scripts -->
@@ -358,11 +380,14 @@
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
     <script>
+      window.onload = fetchWishes;
       AOS.init({
         easing: "ease-out",
         duration: 800,
       });
+      
     </script>
+
   </body>
 </html>
 

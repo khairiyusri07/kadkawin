@@ -457,4 +457,84 @@ body.preloader-site {
   border-radius: 10px;
 }
 
+.btn{
+width: 80%;
+height: 250%;
+  background: white;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 10px;
+  position: absolute;
+  bottom:  60;
+  left: 50%;
+  transform: translate(-50%,-50%) 
+  
+  
+}
 
+.popup{
+  width: 400px;
+  background: white;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: gray;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.popup img{
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 10%;
+}
+
+.popup h2{
+  font-size: 38px ;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button{
+  width: 100%;
+  margin-top:  50px; ;
+  padding: 10px 0;
+  background: #004d24;
+  color: azure;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.popup button{
+  width: 100%;
+  margin-top:  50px; ;
+  padding: 10px 0;
+  background: #55b482;
+  color: azure;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.open-popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.tempatHantarUcapan{
+  align-self:center;
+}
