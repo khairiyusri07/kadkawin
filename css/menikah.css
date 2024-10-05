@@ -133,12 +133,12 @@ html {
 }
 
 .main-content .section-dark {
-  background-color: #00a74e;
+  background-color: #006144;
   padding: 80px 40px;
 }
 
 .main-content .section-darker {
-  background-color: #017738;
+  background-color: #004d24;
   padding: 80px 40px;
 }
 
@@ -348,43 +348,10 @@ vertical-align: middle;
   vertical-align: middle;
 }
 
-.footer {
-  bottom: 0;
-  width: 100vw;
-  padding: 10px 10px 10px 10px;
-  line-height: 25px;
-  text-align: center;
-  vertical-align: middle;
-  background: #c28285;
-  color: whitesmoke;    
-}
-
-.footer p {
-  color: white;
-  font-weight: 500;
-  font-size: 10pt;
-  display: inline-block;
-  vertical-align: middle;
-}
 
 
 .main-content .no-padding-top {
   padding-top: 0px;
-}
-
-.footer img{
-  margin: 10px 0px 10px 10px;
-  display: inline-block;
-  max-height: 24px;
-  vertical-align: middle;
-}
-
-.footer a .nav-item {
-  color: whitesmoke;
-}
-
-.fa-download {
-  color: #43485c;
 }
 
 .divider {
@@ -445,7 +412,7 @@ body.preloader-site {
 .preloader-wrapper {
   height: 100%;
   width: 100%;
-  background: #D8A9A8;
+  background: #004d24;
   position: fixed;
   top: 0;
   left: 0;
@@ -461,94 +428,16 @@ body.preloader-site {
   width: 120px;
 }
 
-
-.btn-whatsapp:hover {
-  color: white;
-  background-color: #59a543;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  border: 2px solid #59a543;
-  width:  210px;
-  height: 65px;
-  align-items: center;
-  margin: 1rem;
-}
-
-
-.btn-whatsapp {
-  background-color: #6cc751;
-  width:  210px;
-  height: 65px;
-  color: white;
-  font-size: 1.2rem;
-  border-radius: 10px;  
-  border-left: 1px solid #6cc751;
-  border-right: 1px solid #6cc751;
-  border-top: 1px solid #6cc751;
-  border-bottom: 1px solid #6cc751;
-  align-items: center;
-  margin: 1rem;
-
-}
-
-
-.btn-cta:hover {
-  color:white;
-  background-color: #bf7877;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  border: 2px solid #bf7877;
-  width:  210px;
-  height: 65px;
-  align-items: center;
-  margin: 1rem;
-}
-
 .btn-cta {
-  background-color: #004d24;
+  background-color: #13723f;
   width:  210px;
   height: 65px;
   color: white;
   font-size: 1.2rem;
-  border: 2px solid #004d24;
+  border: 2px solid #13723f;
   border-radius: 10px;
   align-items: center;
   margin: 1rem;
-}
-
-.cashbac-logo-inline {
-  width: 160px;
-  vertical-align: middle;
-}
-
-.button-download {
-  min-width: 200px;
-  height: 55px;
-  align-items: center;
-  margin: 0.1rem;
-
-}
-
-.voucher-code {
-  height: 55px;
-  max-width: 180px;
-  border: 2px solid #26ade4;
-  border-radius: 10px 0 0 10px  ;
-  font-size: 24px;
-  padding: 15px;
-}
-
-.btn-voucher-code {
-  height: 55px;
-  min-width: 100px;
-  border: 2px solid #26ade4;
-  background-color: #26ade4;
-  border-radius: 0 10px 10px 0;
-  font-size: 20px;
-  padding: 0;
-  margin: 0;
-  vertical-align: middle;
-  color: white;
 }
 
 .fa-copy {
@@ -558,10 +447,10 @@ body.preloader-site {
 {color:ghostwhite}
 
 
-.dusty-pink {color: #D8A9A8}
-.dusty-pink-lighter {color: #EDD2D1}
-.dusty-pink-lightest {color: #F4E2E2}
-.dusty-pink-darker {color: #BC8887}
+.dusty-pink {color: #004d24}
+.dusty-pink-lighter {color: #004d24}
+.dusty-pink-lightest {color: #004d24}
+.dusty-pink-darker {color: #004d24}
 .dusty-pink-darkest {color: #004d24}
 
 .tile {
@@ -569,41 +458,3 @@ body.preloader-site {
 }
 
 
-
-
-.title-foto {
-  font-size: 18pt;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  text-align: left;
-  color: white;
-}
-
-
-.subtitle-foto {
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  font-size: 14pt;
-  font-weight: 600;
-  margin-top: 15px;
-  text-align: left;
-  color: white;
-}
-
-.section-light {
-  background-image: url(../image/divider-flowers-leaves.png);
-  background-position: bottom -30px center;
-  background-repeat: no-repeat;
-  background-size: initial;
-}
-
-.instagram {
-  color: #004d24;
-  font-size: 1.25rem;
-  font-weight: 900;
-  margin-top: 0.5rem;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  padding: 10px;
-}
