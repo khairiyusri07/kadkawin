@@ -13,8 +13,8 @@
 			days: 'Hari',
 			hour: 'Jam',
 			hours: 'Jam',
-			minute: 'Menit',
-			minutes: 'Menit',
+			minute: 'Minit',
+			minutes: 'Minit',
 			second: 'Saat',
 			seconds: 'Saat'
 		}, options);

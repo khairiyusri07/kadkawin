@@ -28,18 +28,20 @@ html {
   box-shadow:  ;
 }
 
+
 .navbar-item.is-active{
-  border-bottom: 2px solid #996E6D;
+  border-bottom: 2px solid #004d24;
 }
 
 .a.navbar-item{
-  font-color: #996E6D;
+  font-color: #004d24;
 }
+
 
 
 .hero {
   background-image: url(https://picsum.photos/id/25/1920/1080);
-  background: linear-gradient(rgba(153, 110, 109, 0.65), rgba(153, 110, 109, 0.65)), rgba(0, 0, 0, 0.55) url("https://picsum.photos/id/381/1920/1080") no-repeat;
+  background: linear-gradient(rgba(22, 80, 39, 0.65), rgb(31.4, 78.4, 3)), rgba(0, 0, 0, 0.55) url("https://picsum.photos/id/381/1920/1080") no-repeat;
   background-attachment: fixed;
   background-size: cover;
   color: white;
@@ -102,15 +104,15 @@ html {
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li.is-active a {
-  border-bottom: 2px solid #996E6D;
+  border-bottom: 2px solid #004d24;
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a {
-  color: #996E6D;
+  color: #004d24;
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a:hover {
-  color: #996E6D;
+  color: #004d24;
   transition: all .2s ease-in-out;
   border-bottom: 2px solid #c28285;
 }
@@ -131,12 +133,12 @@ html {
 }
 
 .main-content .section-dark {
-  background-color: #F4E2E2;
+  background-color: #00a74e;
   padding: 80px 40px;
 }
 
 .main-content .section-darker {
-  background-color: #EDD2D1;
+  background-color: #017738;
   padding: 80px 40px;
 }
 
@@ -157,9 +159,9 @@ html {
 }
 
 .main-content .section-dark.resume button {
-  border: 2px solid #996E6D;
+  border: 2px solid #004d24;
   background: white;
-  color: #996E6D;
+  color: #004d24;
   height: 50px;
   width: 250px;
   font-size: 1rem;
@@ -167,7 +169,7 @@ html {
 }
 
 .main-content .section-dark.resume .fa-download {
-  color: #996E6D;
+  color: #004d24;
 }
 
 .main-content .section-dark.my-work {
@@ -273,7 +275,7 @@ html {
 
 .main-content .section-color.pertanyaan {
   padding: 100px;
-  background-color: #996E6D;
+  background-color: #004d24;
   color: white;
 }
 
@@ -290,7 +292,7 @@ html {
 .main-content .section-title {
   font-family: 'Raleway', sans-serif;
   font-weight: 900;
-  color: #996E6D;
+  color: #004d24;
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 0px;
@@ -301,7 +303,7 @@ html {
  }
 .nama-lengkap {
   font-family: 'Rouge Script', sans-serif;
-  color: #996E6D;
+  color: #004d24;
   font-size: 3.5rem;
   letter-spacing: 0px;
   padding-bottom: 6px;
@@ -311,7 +313,7 @@ html {
 .ampersand {
 font-size: 5rem;
 font-family: 'Rouge Script', sans-serif;
-color: #996E6D;
+color: #004d24;
 line-height: 5rem;
 display: inline-block;
 vertical-align: middle;
@@ -409,7 +411,7 @@ vertical-align: middle;
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #996E6D;
+  background-color: #004d24;
   color: white;
   cursor: pointer;
   border-radius: 50%;
@@ -431,8 +433,8 @@ vertical-align: middle;
 }
 
 ::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 6px #996E6D;
-  -webkit-box-shadow: inset 0 0 6px #996E6D;
+  box-shadow: inset 0 0 6px #004d24;
+  -webkit-box-shadow: inset 0 0 6px #004d24;
   background-color: #BC8887;
 }
 
@@ -503,12 +505,12 @@ body.preloader-site {
 }
 
 .btn-cta {
-  background-color: #996E6D;
+  background-color: #004d24;
   width:  210px;
   height: 65px;
   color: white;
   font-size: 1.2rem;
-  border: 2px solid #996E6D;
+  border: 2px solid #004d24;
   border-radius: 10px;
   align-items: center;
   margin: 1rem;
@@ -560,62 +562,12 @@ body.preloader-site {
 .dusty-pink-lighter {color: #EDD2D1}
 .dusty-pink-lightest {color: #F4E2E2}
 .dusty-pink-darker {color: #BC8887}
-.dusty-pink-darkest {color: #996E6D}
+.dusty-pink-darkest {color: #004d24}
 
 .tile {
   border-radius: 10px;
 }
 
-
-.foto1 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-kang-emil.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-
-.foto2 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-cashbac.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-.foto3 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-selfie.jpg");
-  background-size: cover;
-  background-position: top;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-.foto4 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-lamaran.jpg");
-  background-size: cover;
-  background-position: top;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-.foto5 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-red-car.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-
-.foto6 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-engagement-ami.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
 
 
 
@@ -646,7 +598,7 @@ body.preloader-site {
 }
 
 .instagram {
-  color: #996E6D;
+  color: #004d24;
   font-size: 1.25rem;
   font-weight: 900;
   margin-top: 0.5rem;
