@@ -27,14 +27,12 @@ $(document).ready(function(){
   window.scrollTo(0, 0);
   $("html, body").addClass("no-scroll");
 
-  $(".container").mouseenter(function(){
-      $(".card").stop().animate({
-          top:"-90px"
-      }, "slow");
-      }).mouseleave(function(){
-          $(".card").stop().animate({
-              top:0
-          }, "slow");
+  $(document).ready(function(){
+    setTimeout(function(){
+        $(".card").stop().animate({
+            top: "-90px"
+        }, "slow");
+    }, 2000);
       });
       $(".card").click(function () {
           $(".opening").fadeOut("slowest"); // Smooth fade-out effect
