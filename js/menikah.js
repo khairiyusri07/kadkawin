@@ -32,7 +32,7 @@ $(document).ready(function(){
         $(".card").stop().animate({
             top: "-90px"
         }, "slow");
-    }, 2000);
+    }, 1000);
       });
       $(".card").click(function () {
           $(".opening").fadeOut("slowest"); // Smooth fade-out effect
