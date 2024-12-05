@@ -22,6 +22,28 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+// Add the 'no-scroll' class initially to prevent scrolling when the page loads
+$(document).ready(function(){
+  window.scrollTo(0, 0);
+  $("html, body").addClass("no-scroll");
+
+  $(".container").mouseenter(function(){
+      $(".card").stop().animate({
+          top:"-90px"
+      }, "slow");
+      }).mouseleave(function(){
+          $(".card").stop().animate({
+              top:0
+          }, "slow");
+      });
+      $(".card").click(function () {
+          $(".opening").fadeOut("slowest"); // Smooth fade-out effect
+          $("html, body").css("overflow", "visible");
+           $("body").css("pointer-events", "auto");
+
+      });
+  });
+
 // Smooth Anchor Scrolling
 $(document).on("click", 'a[href^="#"]', function(event) {
   event.preventDefault();
