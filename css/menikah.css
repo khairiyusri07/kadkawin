@@ -330,7 +330,7 @@ top:12px ;
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a:hover {
   color: #004d24;
   transition: all .2s ease-in-out;
-  border-bottom: 2px solid #c28285;
+  border-bottom: 2px solid #004d24;
 }
 
 
@@ -607,18 +607,18 @@ vertical-align: middle;
 }
 
 #toTop:hover {
-  background-color: #BC8887;
+  background-color: #004d24;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: #F4E2E2;
+  background-color: #004d24;
 }
 
 ::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 6px #004d24;
   -webkit-box-shadow: inset 0 0 6px #004d24;
-  background-color: #BC8887;
+  background-color: #004d24;
 }
 
 body.preloader-site {
