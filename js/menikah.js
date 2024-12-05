@@ -40,6 +40,8 @@ $(document).ready(function(){
           $(".opening").fadeOut("slowest"); // Smooth fade-out effect
           $("html, body").css("overflow", "visible");
            $("body").css("pointer-events", "auto");
+           var music = $("#background-music")[0]; // Get the audio element
+        music.play(); // Play the audio
 
       });
   });
