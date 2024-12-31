@@ -10,7 +10,7 @@ $(document).ready(function(){
           }, "slow");
       }, 1000);
         });
-        $(".card").click(function () {
+        $(".card, .envelope, .front").click(function () {
             $(".opening").fadeOut("slowest"); // Smooth fade-out effect
             $("html, body").css("overflow", "visible");
              $("body").css("pointer-events", "auto");

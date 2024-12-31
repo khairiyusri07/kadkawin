@@ -20,23 +20,7 @@ html, body.no-scroll {
   padding-bottom: 30px;
 }
 
-.navbar-item {
-  line-height: 38px;
-  font-weight: 600;
-  text-transform: ;
-  letter-spacing: 1px;
-  font-size: 1rem;
-  box-shadow:  ;
-}
 
-
-.navbar-item.is-active{
-  border-bottom: 2px solid #004d24;
-}
-
-.a.navbar-item{
-  font-color: #004d24;
-}
 
 .hero {
   background-image: url(https://picsum.photos/id/25/1920/1080);
@@ -364,6 +348,13 @@ vertical-align: middle;
   margin: 25px;
   display: inline-block;
   max-height: 50px;
+  vertical-align: middle;
+}
+
+.barakallah {
+  margin: 10px;
+  display: inline-block;
+  max-height: 200px;
   vertical-align: middle;
 }
 
