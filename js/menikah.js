@@ -52,7 +52,7 @@ async function submitForm(event) {
 
   // Sending data to SheetDB
   try {
-      const response = await fetch('https://sheetdb.io/api/v1/qm2xsbjygn8so', {
+      const response = await fetch('https://sheetdb.io/api/v1/7638c8784f79b', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -66,15 +66,17 @@ async function submitForm(event) {
       // You can also provide feedback to the user
       alert('Wish submitted successfully!');
       closePopup();
+      fetchWishes();
   } catch (error) {
       console.error('Error:', error);
       alert('There was an error submitting your wish.');
       closePopup();
+ 
   }
 }
 
 function fetchWishes() {
-  fetch('https://sheetdb.io/api/v1/qm2xsbjygn8so')
+  fetch('https://sheetdb.io/api/v1/7638c8784f79b')
     .then(response => response.json())
     .then(data => {
       const wishContainer = document.getElementById('sheetdb-data');

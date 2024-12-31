@@ -23,6 +23,7 @@
     <script src="js/jquery.coundown.js"></script>
     <script src="js/kadbuka.js"></script>
     <link rel="icon" type="image/png" href="image/favicon.png" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23064379-20"></script>
     <!-- Begin Script for Countdown -->
@@ -404,11 +405,16 @@
                     <h1 class="title has-text-centered section-title" data-aos-easing="linear" style="color: white; ">Ucapan</h1>
                 </div>
                 <!-- Displaying Data -->
-                
+                 
+                <table id="myTable">
+                  <thead>
+                      <tr></tr> </thead>
+                  <tbody></tbody>
+              </table>
                 <div class="column is-12 has-text-centered" id="wish-container" data-aos="fade-up" data-aos-easing="linear">
                   
                   <div class="box" style="border: 2px solid #ccc; padding: 20px; border-radius: 10px; background-color: #f9f9f9; display: inline-block; width: 80%; height: 400px; overflow-y: auto; margin: 0 auto;">
-                    <button class="button is-primary mt-5" onclick="fetchWishes()" style="margin-top: 10px; background-color: #004d24;" >Semak ucapan baru</button>
+
                     <div id="sheetdb-data" style="margin: 0 auto;">
                       <!-- Wishes will be loaded here on page load -->
                     </div>
