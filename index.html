@@ -35,7 +35,114 @@
       gtag('config', 'UA-23064379-20');
     </script>
     <!-- Begin Script for Countdown -->
+<script>
+  (function ($) {
+	$.fn.countdown = function (options, callback) {
+		var settings = $.extend({
+			date: null,
+			offset: null,
+			day: 'Hari',
+			days: 'Hari',
+			hour: 'Jam',
+			hours: 'Jam',
+			minute: 'Minit',
+			minutes: 'Minit',
+			second: 'Saat',
+			seconds: 'Saat'
+		}, options);
 
+		// Throw error if date is not set
+		if (!settings.date) {
+			$.error('Date is not defined.');
+		}
+
+		// Throw error if date is set incorectly
+		if (!Date.parse(settings.date)) {
+			$.error('Incorrect date format, it should look like this, 12/24/2012 12:00:00.');
+		}
+
+		// Save container
+		var container = this;
+
+		/**
+		 * Change client's local date to match offset timezone
+		 * @return {Object} Fixed Date object.
+		 */
+		var currentDate = function () {
+			// get client's current date
+			var date = new Date();
+
+			// turn date to utc
+			var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+
+			// set new Date object
+			var new_date = new Date(utc + (3600000*settings.offset));
+
+			return new_date;
+		};
+
+		/**
+		 * Main countdown function that calculates everything
+		 */
+		function countdown () {
+			var target_date = new Date(settings.date), // set target date
+				current_date = currentDate(); // get fixed current date
+
+			// difference of dates
+			var difference = target_date - current_date;
+
+			// if difference is negative than it's pass the target date
+			if (difference < 0) {
+				// stop timer
+				clearInterval(interval);
+
+				if (callback && typeof callback === 'function') callback();
+
+				return;
+			}
+
+			// basic math variables
+			var _second = 1000,
+				_minute = _second * 60,
+				_hour = _minute * 60,
+				_day = _hour * 24;
+
+			// calculate dates
+			var days = Math.floor(difference / _day),
+				hours = Math.floor((difference % _day) / _hour),
+				minutes = Math.floor((difference % _hour) / _minute),
+				seconds = Math.floor((difference % _minute) / _second);
+
+			// based on the date change the refrence wording
+			var text_days = (days === 1) ? settings.day : settings.days,
+				text_hours = (hours === 1) ? settings.hour : settings.hours,
+				text_minutes = (minutes === 1) ? settings.minute : settings.minutes,
+				text_seconds = (seconds === 1) ? settings.second : settings.seconds;
+
+				// fix dates so that it will show two digets
+				days = (String(days).length >= 2) ? days : '0' + days;
+				hours = (String(hours).length >= 2) ? hours : '0' + hours;
+				minutes = (String(minutes).length >= 2) ? minutes : '0' + minutes;
+				seconds = (String(seconds).length >= 2) ? seconds : '0' + seconds;
+
+			// set to DOM
+			container.find('.days').text(days);
+			container.find('.hours').text(hours);
+			container.find('.minutes').text(minutes);
+			container.find('.seconds').text(seconds);
+
+			container.find('.days_text').text(text_days);
+			container.find('.hours_text').text(text_hours);
+			container.find('.minutes_text').text(text_minutes);
+			container.find('.seconds_text').text(text_seconds);
+		}
+
+		// start
+		var interval = setInterval(countdown, 1000);
+	};
+
+})(jQuery);
+</script>
     <!-- Github Button -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
@@ -231,7 +338,7 @@
           </div>
           <div class="ampersand">&</div>
           <div class="nama-lengkap">
-            Irine Izzdiyana binti Mohamad Ismail
+            Irine Izzdiyana binti Mohd Ismail
           </div>
            
         </div>
@@ -365,29 +472,22 @@
             <p class="tempat is-larger has-text-centered" style="color: white; " data-aos="fade-up" data-aos-easing="linear">
               Kehadiran Tetamu:
               <br>
-              11:00 pagi
+              12:00 tengah hari
               <br>
               <br>
               </p>
             <p class="tempat is-larger has-text-centered" style="color: white; " data-aos="fade-up" data-aos-easing="linear">
               Ketibaan Pengantin:
               <br>
-              12:00 tengah hari
+              01:00 petang
               <br>
               <br>
             </p>
-
-            <p class="tempat is-larger has-text-centered" style="color: white; " data-aos="fade-up" data-aos-easing="linear">
-              Makan Beradab:
-              <br>
-              12:30 petang
-              <br>
-              <br>
-            </p>
+            
             <p class="tempat is-larger has-text-centered" style="color: white; " data-aos="fade-up" data-aos-easing="linear">
               Majlis Berakhir:
               <br>
-              4:00 petang
+              5:00 petang
             </p>
 
 
@@ -427,7 +527,7 @@
                   <div class="column is-12 prolog has-text-centered">
 
                     <button type="submit" class="button is-primary mt-5" style="height: fit-content; width: auto;; margin-top: 10px; background-color: #f8f8f8; color: black;   font-size: 22px;
-                    font-weight: 500;" onclick="openPopup()" >Hantar Ucapan</button>
+                    font-weight: 500;" onclick="openPopup()" >Tulis Ucapan</button>
                       <div class="popup" id="popup" >
 
                         
