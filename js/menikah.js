@@ -52,7 +52,7 @@ async function submitForm(event) {
 
   // Sending data to SheetDB
   try {
-      const response = await fetch('https://sheetdb.io/api/v1/7638c8784f79b', {
+      const response = await fetch('https://sheetdb.io/api/v1/fg4rv3y66tkkq', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ async function submitForm(event) {
 }
 
 function fetchWishes() {
-  fetch('https://sheetdb.io/api/v1/7638c8784f79b')
+  fetch('https://sheetdb.io/api/v1/fg4rv3y66tkkq')
     .then(response => response.json())
     .then(data => {
       const wishContainer = document.getElementById('sheetdb-data');
